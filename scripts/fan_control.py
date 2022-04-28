@@ -35,16 +35,16 @@ def fanOFF():
     return()
 
 def handleFanSpeed( ):
-    global fanSpeed, tempSum, tempOld
+    global fanSpeed, tempSum, tempDiffOld
     tempAct = getCpuTemperature( )
 
     tempDiff = tempAct - FAN_TEMP_TARGET
     tempSum = tempSum + tempDiff
     pDiff = PID_P_VALUE * tempDiff
     iDiff = PID_I_VALUE * PWM_REFRESH_TIME * tempSum
-    dDiff = PID_D_VALUE * ( tempDiff - tempOld ) / PWM_REFRESH_TIME
+    dDiff = PID_D_VALUE * ( tempDiff - tempDiffOld ) / PWM_REFRESH_TIME
     fanSpeed = pDiff + iDiff + dDiff
-    tempOld = tempAct
+    tempDiffOld = tempDiff
 
     if fanSpeed > FAN_MAX_PERCENTAGE:
         fanSpeed = FAN_MAX_PERCENTAGE
@@ -54,8 +54,8 @@ def handleFanSpeed( ):
         tempSum = 100
     if tempSum < -100:
         tempSum = -100
-    print("actualTemp %4.2f TempDiff %4.2f pDiff %4.2f iDiff %4.2f dDiff %4.2f fanSpeed %5d" % (
-         tempAct, tempDiff, pDiff, iDiff, dDiff, fanSpeed))
+    print("actualTemp %4.2f TempDiff %4.2f TempSum %4.2f pDiff %4.2f iDiff %4.2f dDiff %4.2f fanSpeed %5d" % (
+         tempAct, tempDiff, tempSum, pDiff, iDiff, dDiff, fanSpeed))
     pwmPin.ChangeDutyCycle(fanSpeed)
     return()
 

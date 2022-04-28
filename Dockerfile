@@ -15,8 +15,9 @@ ENV PWM_OUT_PIN=18 \
     FAN_TACH_PULSE_PER_REV=2 \
     FAN_TACH_REFRESH_TIME=1 \
     PID_P_VALUE=5.0 \
-    PID_I_VALUE=5.0 \
-    PID_D_VALUE=5.0
+    PID_I_VALUE=3.0 \
+    PID_D_VALUE=3.0 \
+    GID_GPIO=997
 
 #ARG PYTHON3_VERSION="3.9.7-r4"
 #ARG PYTHON3_DEV_VERSION="3.9.7-r4"
@@ -30,6 +31,9 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y build-essential && \
     apt-get clean && \
     python3 -m pip install --no-cache-dir rpi.gpio==$RPI_GPIO_VERSION
+
+RUN groupadd -g $GID_GPIO gpio && \
+    usermod -aG gpio root
 
 COPY scripts/* /root/
 RUN chmod +x /root/docker-entrypoint.sh
