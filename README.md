@@ -3,8 +3,8 @@
 The Docker Image is based on [Pythons slim Image](https://hub.docker.com/_/python).
 
 ## Dependencies:
-[![Generic badge](https://img.shields.io/badge/python--3.10-slim-brightgreen.svg)](https://hub.docker.com/_/python)
-[![Generic badge](https://img.shields.io/badge/rpi.gpio--0.7.1--brightgreen.svg)](https://pypi.org/project/RPi.GPIO/)
+[![Generic badge](https://img.shields.io/badge/python-3.10--slim-brightgreen)](https://hub.docker.com/_/python)
+[![Generic badge](https://img.shields.io/badge/rpi.gpio-0.7.1-brightgreen)](https://pypi.org/project/RPi.GPIO/)
 
 ## Configuration:
 The container needs access to the device: `/dev/gpiomem` This can either be accomplished by adding it as a device, or by adding it as a Volume, if you are running this image in a swarm.
