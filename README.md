@@ -3,7 +3,7 @@
 The Docker Image is based on [Pythons slim Image](https://hub.docker.com/_/python).
 
 ## Dependencies:
-[![Generic badge](https://img.shields.io/badge/python-3.10--slim-brightgreen)](https://hub.docker.com/_/python)
+[![Generic badge](https://img.shields.io/badge/python-3.15--slim-brightgreen)](https://hub.docker.com/_/python)
 [![Generic badge](https://img.shields.io/badge/rpi.gpio-0.7.1-brightgreen)](https://pypi.org/project/RPi.GPIO/)
 
 ## Configuration:
