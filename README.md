@@ -14,22 +14,31 @@ The container needs access to the device: `/dev/gpiomem` This can either be acco
 The following Docker Environment Variables can be set:
 
 
-| Variable               | Default | Description                                                  |
-|------------------------|---------|--------------------------------------------------------------|
-| FAN_START_PERCENTAGE   | 50      | value at which the Fan should start                          |
-| FAN_OFF_PERCENTAGE     | 0.0     | Percentage at which the fan is stopped                       |
-| FAN_MIN_PERCENTAGE     | 1.0     | Percentage minimum controllable value.                       |
-| FAN_MAX_PERCENTAGE     | 100.0   | Percentage up to which the fan should be controlled          |
-| FAN_TACH_IN_PIN        | 24      | GPIO Pin that is connected to the fans TACH-output           |
-| FAN_TACH_PULSE_PER_REV | 2       | How many TACH-pulses are provided per revolustion of the fan |
-| FAN_TACH_REFRESH_TIME  | 1       | Time between fan-speed measurements                          |
-| FAN_TEMP_OFF           | 35.0    | Temperature lower of which the fan should be turned off      |
-| FAN_TEMP_TARGET        | 40.0    | Temperature that should be reached                           |
-| PWM_FREQUENCY          | 25      | PWM-frequency in kHz                                         |
-| PWM_OUT_PIN            | 18      | GPIO-Pin that the Fan is connected to                        |
-| PWM_REFRESH_TIME       | 1.0     | Time between temp-measurements & fan-speed calculations      |
-| PID_P_VALUE            | 5.0     | P constant for the PID-controller algorithm                  |
-| PID_I_VALUE            | 5.0     | I constant for the PID-controller algorithm                  |
-| PID_D_VALUE            | 5.0     | D constant for the PID-controller algorithm                  |
+| Variable               | Default | Description                                                 |
+|------------------------|---------|-------------------------------------------------------------|
+| FAN_START_PERCENTAGE   | 50      | value at which the Fan should start                         |
+| FAN_OFF_PERCENTAGE     | 0.0     | Percentage at which the fan is stopped                      |
+| FAN_MIN_PERCENTAGE     | 1.0     | Percentage minimum controllable value.                      |
+| FAN_MAX_PERCENTAGE     | 100.0   | Percentage up to which the fan should be controlled         |
+| FAN_TACH_IN_PIN        | 24      | GPIO Pin that is connected to the fans TACH-output          |
+| FAN_TACH_PULSE_PER_REV | 2       | How many TACH-pulses are provided per revolution of the fan |
+| FAN_TACH_REFRESH_TIME  | 1       | Time between fan-speed measurements                         |
+| FAN_TEMP_OFF           | 35.0    | Temperature lower of which the fan should be turned off     |
+| FAN_TEMP_TARGET        | 40.0    | Temperature that should be reached                          |
+| PWM_FREQUENCY          | 25      | PWM-frequency in kHz                                        |
+| PWM_OUT_PIN            | 18      | GPIO-Pin that the Fan is connected to                       |
+| PWM_REFRESH_TIME       | 1.0     | Time between temp-measurements & fan-speed calculations     |
+| PID_P_VALUE            | 5.0     | P constant for the PID-controller algorithm                 |
+| PID_I_VALUE            | 5.0     | I constant for the PID-controller algorithm                 |
+| PID_D_VALUE            | 5.0     | D constant for the PID-controller algorithm                 |
+
+## Support
+
+Docker-rpiFan is a free docker image powered by other open source. I am not able to provide full support, however if you find any bugs or if you need a new feature you can create an issue.
+If you want to support my work you can do this through my ko-fi page:
+
+https://ko-fi.com/dumpname
+
+## License
 
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
